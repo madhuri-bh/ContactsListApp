@@ -7,13 +7,14 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "contacts_table")
 public class Contacts {
-    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "Name")
     private String mName;
+    @NonNull
     @PrimaryKey
     @ColumnInfo(name = "Phone")
     private String mPhoneNo;
-    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "Email")
     private String mEmail;
     @ColumnInfo(name = "Age")
@@ -25,7 +26,7 @@ public class Contacts {
     @ColumnInfo(name = "College")
     private String mCollege;
 
-    public Contacts(@NonNull String name,@NonNull String phoneNo, String email,@NonNull int age,@NonNull int gender,@NonNull String city,@NonNull String college) {
+    public Contacts(String name, String phoneNo, String email,@NonNull int age,@NonNull int gender,@NonNull String city,@NonNull String college) {
         this.mName = name;
         this.mPhoneNo = phoneNo;
         this.mEmail = email;
