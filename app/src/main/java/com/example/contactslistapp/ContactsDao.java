@@ -1,6 +1,8 @@
 package com.example.contactslistapp;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
+import androidx.paging.PagedList;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -17,5 +19,5 @@ public interface ContactsDao {
     void deleteAll();
 
     @Query("SELECT * from contacts_table ORDER BY Name ASC")
-    LiveData<List<Contacts>> getAllContacts();
+    DataSource.Factory<Integer,Contacts> getAllContacts();
 }

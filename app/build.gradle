@@ -55,4 +55,5 @@ dependencies {
 
 // Testing
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    implementation 'androidx.paging:paging-runtime:2.1.2'
 }
