@@ -50,33 +50,20 @@ public class addActivity extends AppCompatActivity  {
         final EditText phone = findViewById(R.id.newPhone);
         final EditText email = findViewById(R.id.new_email);
         final EditText age = findViewById(R.id.new_age);
+        final EditText city = findViewById(R.id.new_city);
+        final EditText college = findViewById(R.id.new_college);
         Button saveBtn = findViewById(R.id.new_save);
-        int contactsAge = 0;
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.new_gender);
+        //final int contactsAge = 0;
+        RadioGroup radioGroup =  findViewById(R.id.new_gender);
         radioGroup.setOnCheckedChangeListener(
                 new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
+                        RadioButton radioButton =  group.findViewById(checkedId);
                     }
                 });
 
-        if (extras != null) {
-            String contactsName = extras.getString(EXTRA_NAME, "");
-            String contactsPhone = extras.getString(EXTRA_PHONE_NO);
-            String contactsEmail = extras.getString(EXTRA_EMAIL);
-            contactsAge = extras.getInt(EXTRA_AGE);
-            String contactsGender = extras.getString(EXTRA_GENDER);
-            String contactsCity = extras.getString(EXTRA_CITY);
-            String contactsCollege = extras.getString(EXTRA_COLLEGE);
 
-            if (!contactsName.isEmpty()) {
-                name.setText(contactsName);
-            }
-
-            if (!contactsPhone.isEmpty()) {
-                phone.setText(contactsPhone);
-            }
 
             saveBtn.setText("UPDATE");
 
@@ -86,12 +73,37 @@ public class addActivity extends AppCompatActivity  {
                     String Name = name.getText().toString();
                     String Phone = phone.getText().toString();
                     String Email = email.getText().toString();
-                    String Age = age.getText().toString();
+                    //String Age = age.getText().toString();
+                    int Age = Integer.parseInt(String.valueOf(age));
                     int selectedId = radioGroup.getCheckedRadioButtonId();
                     if (selectedId == -1) {
                         Toast.makeText(getApplicationContext(), "Missed an input", Toast.LENGTH_SHORT).show();
                     } else {
                         RadioButton radioButton = (RadioButton) radioGroup.findViewById(selectedId);
+                    }
+                    String City = city.getText().toString();
+                    String College = college.getText().toString();
+                    if(!Name.isEmpty() && !Phone.isEmpty() && !Email.isEmpty() && !City.isEmpty() && !College.isEmpty() )
+                    if (extras != null) {
+                        Contacts contacts = new Contacts(Name, Phone, Email, Age, selectedId, City, College);
+                        viewModel.insertContacts(contacts);
+                        String contactsName = extras.getString(EXTRA_NAME, "");
+                        String contactsPhone = extras.getString(EXTRA_PHONE_NO);
+                        String contactsEmail = extras.getString(EXTRA_EMAIL);
+                        int contactsAge = extras.getInt(EXTRA_AGE);
+                        String contactsGender = extras.getString(EXTRA_GENDER);
+                        String contactsCity = extras.getString(EXTRA_CITY);
+                        String contactsCollege = extras.getString(EXTRA_COLLEGE);
+
+                        if (!contactsName.isEmpty()) {
+                            name.setText(contactsName);
+                        }
+
+                        if (!contactsPhone.isEmpty()) {
+                            phone.setText(contactsPhone);
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(),"Missed an input",Toast.LENGTH_SHORT).show();
                     }
 
                     setResult(RESULT_OK);
@@ -101,7 +113,7 @@ public class addActivity extends AppCompatActivity  {
 
         }
     }
-}
+
 
    /* @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -145,6 +157,7 @@ public class addActivity extends AppCompatActivity  {
         });
     }
 }*/
+
 
 
 

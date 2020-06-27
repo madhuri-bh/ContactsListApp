@@ -26,7 +26,7 @@ public class Contacts {
     @ColumnInfo(name = "College")
     private String mCollege;
 
-    public Contacts(String name, String phoneNo, String email, @NonNull int age, @NonNull int gender, @NonNull String city, @NonNull String college) {
+    public Contacts(@NonNull String name,@NonNull String phoneNo,@NonNull String email, int age, @NonNull int gender, @NonNull String city, @NonNull String college) {
         this.mName = name;
         this.mPhoneNo = phoneNo;
         this.mEmail = email;
@@ -36,8 +36,40 @@ public class Contacts {
         this.mCollege = college;
     }
 
+    public Contacts() {
+
+    }
+
     public String getName() {
         return this.mName;
+    }
+
+    public void setName(@NonNull String mName) {
+        this.mName = mName;
+    }
+
+    public void setPhoneNo(@NonNull String mPhoneNo) {
+        this.mPhoneNo = mPhoneNo;
+    }
+
+    public void setEmail(@NonNull String mEmail) {
+        this.mEmail = mEmail;
+    }
+
+    public void setAge(int mAge) {
+        this.mAge = mAge;
+    }
+
+    public void setGender(int mGender) {
+        this.mGender = mGender;
+    }
+
+    public void setCity(String mCity) {
+        this.mCity = mCity;
+    }
+
+    public void setCollege(String mCollege) {
+        this.mCollege = mCollege;
     }
 
     public String getPhoneNo() {

@@ -113,6 +113,53 @@
 
     </RadioGroup>
 
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/city"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/college"
+        app:layout_constraintVertical_bias="0.152"  />
+
+    <EditText
+        android:id="@+id/college"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/college"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/save"
+        app:layout_constraintVertical_bias="0.152"  />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/college"
+        app:layout_constraintVertical_bias="0.763" />
+
+
 
 
 
