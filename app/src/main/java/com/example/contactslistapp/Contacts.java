@@ -26,7 +26,7 @@ public class Contacts {
     @ColumnInfo(name = "College")
     private String mCollege;
 
-    public Contacts(String name, String phoneNo, String email,@NonNull int age,@NonNull int gender,@NonNull String city,@NonNull String college) {
+    public Contacts(String name, String phoneNo, String email, @NonNull int age, @NonNull int gender, @NonNull String city, @NonNull String college) {
         this.mName = name;
         this.mPhoneNo = phoneNo;
         this.mEmail = email;
