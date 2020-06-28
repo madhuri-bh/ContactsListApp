@@ -10,8 +10,8 @@ public class Contacts {
     @NonNull
     @ColumnInfo(name = "Name")
     private String mName;
-    @NonNull
     @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "Phone")
     private String mPhoneNo;
     @NonNull
@@ -39,6 +39,7 @@ public class Contacts {
     public Contacts() {
 
     }
+
 
     public String getName() {
         return this.mName;
